@@ -1,0 +1,14 @@
+# the file permissions are:
+# 	-rw-r--r--. 1 root root  in  /etc/systemd/system/py_mntbrt.service
+[Unit]
+Description=Brightness Monitor Changer Python Script
+
+[Service]
+ExecStart=/usr/bin/python3 /home/<USER>/Scripts/Python_scripts/brightness.py
+TasksMax=3
+Environment=DISPLAY=:0
+Restart=always
+User=<USER>
+
+[Install]
+WantedBy=multi-user.target
